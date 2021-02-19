@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>setTimeout</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      mark {
+        background-color: green;
+        color: white;
+      }
+    </style>
+ 
+    <script language="JavaScript">
+      var i = 0;
+      var arr = new Array("green", "pink", "purple", "yellow", "blue", "red");
+      function init() {
+        image = document.getElementById("img");
+        image.style.position = "relative";
+        image.style.left = "0px";
+      }
+      function mvl() {
+        image.style.left = parseInt(image.style.left) + 5 + "px";
+        animate = setTimeout(mvl, 50);
+      }
+      function mvr() {
+        image.style.left = parseInt(image.style.left) - 5 + "px";
+        animate = setTimeout(mvr, 50);
+      }
+      function stop() {
+        clearTimeout(animate);
+      }
+      window.onload = init;
+      function chng() {
+        document.getElementById("heading").textContent = "Program 8";
+        document.getElementById("heading").style.color = arr[i];
+        i = (i + 1) % arr.length;
+        document.getElementById("line").textContent =
+          "Program to change color using setTimeout() and moving an image";
+      }
+      setTimeout(chng, 2000);
+      setInterval(chng, 1000);
+    </script>
+  </head>
+  <body>
+    <h1 id="heading">Come Inside </h1>
+    <b>
+      <mark> <marquee id="line"></marquee> </mark>
+    </b>
+    <br />
+ 
+    <br />
+    <button type="submit" id="submit" name="move" onClick="mvr()">
+      Reverse
+    </button>
+    <button type="submit" id="submit" name="move_l" onClick="mvl()">
+      Go ahead
+    </button>
+    <button type="submit" id="submit" name="stop" onClick="stop()">Stop</button>
+    <br />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMUZLRqchnz-vMPph52pZAkIEBCqNOWeKjiA&usqp=CAU"
+      id="img"
+    />
+  </body>
+</html>

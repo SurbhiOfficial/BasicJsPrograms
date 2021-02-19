@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<SCRIPT Type="text/javascript">
+var n=prompt("Enter Size Of Array");
+function swaping(item, firstIndex, secondIndex){
+var t = item[firstIndex]; 
+item[firstIndex] = item[secondIndex]; 
+item[secondIndex] = t;
+}
+function bubbleSort(ar){
+	var len = ar.length;
+	var  i, j, stop;
+for (i=0; i < len; i++){
+for (j=0, stop=len-i; j < stop; j++){
+if (ar[j] > ar[j+1]){ swaping(ar, j, j+1);
+}
+}
+}
+return ar;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<SCRIPT Type="text/javascript">
+var arr=[];
+for(var i=0; i<n; i++){
+	arr[i]=prompt("Enter Element");
+}
+document.writeln("Sorted Array: "+bubbleSort(arr));
+</SCRIPT>
+</BODY> </HTML>

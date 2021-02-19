@@ -1,0 +1,20 @@
+<html> <head>
+<style> .highlight {
+background-color: lightblue; }
+</style>
+<script lang="Javascript">
+function highlight() {
+var input = document.getElementById("input");
+var string = document.getElementById("txt").value;
+input.innerHTML = input.innerHTML.replaceAll( string, val => `<span class="highlight">${
+val }</span>`); }
+</script>
+</head>
+<body style="text-align: center">
+<h1 style="color: red; background-color: yellow"> Highlight the searched word by any  fixed colour
+</h1>
+Search word: <input type="text" id="txt" />
+<button onclick="highlight()">Go</button>
+<br />
+<h3 id="input">Text: Twinkle Twinkle little little star. How I wonder what you are</h3> 
+</body> </html>
